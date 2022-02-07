@@ -5,7 +5,7 @@ import com.ivanshestakov.bsuirscheduletelegrambot.dto.LessonDto;
 
 public interface ScheduleService {
 
-    DayScheduleDto getDaySchedule(final String groupNumber);
+    DayScheduleDto getTodaySchedule(final String groupNumber);
 
     LessonDto getCurrentLesson(final String groupNumber);
 }

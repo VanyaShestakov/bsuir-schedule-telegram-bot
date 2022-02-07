@@ -11,6 +11,8 @@ import java.util.List;
 @Builder
 public class DayScheduleDto {
 
+    private String todayDate;
+
     private String weekDay;
 
     private List<LessonDto> lessons;

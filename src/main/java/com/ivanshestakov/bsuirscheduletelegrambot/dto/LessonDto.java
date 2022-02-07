@@ -29,4 +29,9 @@ public class LessonDto {
 
     private String employeeName;
 
+    @Override
+    public String toString() {
+        return null;
+    }
+
 }
