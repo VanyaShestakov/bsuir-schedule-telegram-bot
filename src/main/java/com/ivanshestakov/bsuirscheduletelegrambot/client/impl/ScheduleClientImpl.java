@@ -22,6 +22,7 @@ public class ScheduleClientImpl implements ScheduleClient {
     }
 
     public Schedule getSchedule(String groupNumber) {
+        //restTemplate.execute(SCHEDULE_URL + groupNumber, HttpMethod.GET, null, Schedule.class);
         return restTemplate.exchange(SCHEDULE_URL + groupNumber, HttpMethod.GET, null, Schedule.class).getBody();
     }
 }

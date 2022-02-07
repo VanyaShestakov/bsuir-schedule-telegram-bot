@@ -33,7 +33,7 @@ public class Bot extends TelegramLongPollingBot {
         sendMessage("Привет", update.getMessage().getChatId().toString());
     }
 
-    private void sendMessage(String text, String chatId) {
+    private void sendMessage(final String text, final String chatId) {
         final var message = new SendMessage();
         message.setChatId(chatId);
         message.setText(text);

@@ -22,6 +22,7 @@ public class TestController {
     @GetMapping("/{groupNumber}")
     @ResponseStatus(HttpStatus.OK)
     public Schedule getSchedule(@PathVariable String groupNumber) {
+        log.info(System.getenv("BOT_USERNAME"));
         return scheduleClient.getSchedule(groupNumber);
     }
 
