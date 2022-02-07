@@ -21,6 +21,7 @@ public class ScheduleServiceImpl implements ScheduleService {
 
     @Override
     public DayScheduleDto getDaySchedule(String groupNumber) {
+        final var schedule = scheduleClient.getSchedule(groupNumber);
         return null;
     }
 

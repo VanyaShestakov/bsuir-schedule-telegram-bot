@@ -1,9 +1,13 @@
 package com.ivanshestakov.bsuirscheduletelegrambot.client.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.ivanshestakov.bsuirscheduletelegrambot.dto.LessonDto;
+import lombok.Builder;
 import lombok.Data;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Data
 public class Lesson {
@@ -42,5 +46,22 @@ public class Lesson {
 
     @JsonProperty("zaoch")
     private boolean isDistance;
+
+    public LessonDto toDto() {
+        final var employeeName = employees.stream()
+                .map(employee -> employee.getFullName())
+                .collect(Collectors.joining(","));
+
+        return LessonDto.builder()
+                .auditoryNumbers(auditoryNumbers)
+                .employeeName(employeeName)
+                .lessonType(lessonType)
+                .startLessonTime(startLessonTime)
+                .endLessonTime(endLessonTime)
+                .subjectName(subjectName)
+                .subgroupNumber(subgroupNumber)
+                .weekNumbers(weekNumbers)
+                .build();
+    }
 
 }
